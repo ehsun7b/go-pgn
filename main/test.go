@@ -1,9 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	board2 "github.com/ehsun7b/go-pgn/board"
+)
 
 func main() {
-	var board State
+	var board board2.State
 
 	fmt.Println(board)
 }
