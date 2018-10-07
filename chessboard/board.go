@@ -11,17 +11,9 @@ type State struct {
 	round  string
 	white  string
 	black  string
-	result Result
+	result string
 	moves  []Move
 }
-
-type Result string
-
-const (
-	RESULT_WHITE_WINS Result = "1-0"
-	RESULT_BLACK_WINS Result = "0-1"
-	RESULT_DRAW       Result = "1/2-1/2"
-)
 
 type Move struct {
 	move        NormalMove
@@ -50,24 +42,34 @@ type Cell struct {
 type Piece string
 
 const (
-	PAWN   Piece = "P"
-	ROOK   Piece = "R"
-	KNIGHT Piece = "N"
-	BISHOP Piece = "B"
-	QUEEN  Piece = "Q"
-	KING   Piece = "K"
+	PiecePawn   Piece = "P"
+	PieceRook   Piece = "R"
+	PieceKnight Piece = "N"
+	PieceBishop Piece = "B"
+	PieceQueen  Piece = "Q"
+	PieceKing   Piece = "K"
 )
 
 type MoveType string
 
 const (
-	MOVE    MoveType = "-"
-	CAPTURE MoveType = "x"
+	TypeMove    MoveType = "-"
+	TypeCapture MoveType = "x"
 )
 
 type MoveResult string
 
 const (
-	CHECK     MoveResult = "+"
-	CHECKMATE MoveResult = "#"
+	ResultCheck     MoveResult = "+"
+	ResultCheckmate MoveResult = "#"
+)
+
+const (
+	TagEvent  = "Event"
+	TagSite   = "Site"
+	TagDate   = "Date"
+	TagRound  = "Round"
+	TagWhite  = "White"
+	TagBlack  = "Black"
+	TagResult = "Result"
 )
